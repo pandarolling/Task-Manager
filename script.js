@@ -76,6 +76,12 @@ function renderTasks(){
             indexToBeDeleted = index;
             confirmElement.style.display = 'block';
             taskManagerContainer.classList.add('overlay');
+
+             // Scroll dialog into view
+            confirmElement.scrollIntoView({ behavior: "smooth", block: "center" });
+
+            // Focus confirm button when dialog opens
+            confirmBtn.focus();
         });
 
         // Append all
