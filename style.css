@@ -220,17 +220,17 @@ button:hover {
 }
 
 /* Overlay effect when confirmation is shown */
-.overlay {
+/* .overlay {
     position: relative;
 }
 .overlay::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 100%; 
+    width: 100; 
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
-}
+} */
 
 /* Fade-in animation for confirm box */
 @keyframes fade {
@@ -312,3 +312,5 @@ button:hover {
 .confirm button:active {
     background: #D6D6D6;
 }
+
+

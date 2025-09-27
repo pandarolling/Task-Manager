@@ -75,7 +75,8 @@ function renderTasks(){
         deleteButton.addEventListener('click', () => {
             indexToBeDeleted = index;
             confirmElement.style.display = 'block';
-            taskManagerContainer.classList.add('overlay');
+            document.body.style.overflow = "hidden"; // disable scroll
+            
 
              // Scroll dialog into view
             confirmElement.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -121,14 +122,18 @@ function updateProgressBar() {
 // Confirm delete
 confirmBtn.addEventListener('click', ()=> {
     confirmElement.style.display = 'none';
-    taskManagerContainer.classList.remove('overlay');
+    document.body.style.overflow = "auto"; // enable scroll back
+
+    
     deleteTask(indexToBeDeleted);
 });
 
 // Cancel delete
 cancelBtn.addEventListener('click', ()=> {
     confirmElement.style.display = 'none';
-    taskManagerContainer.classList.remove('overlay');
+    document.body.style.overflow = "auto"; // enable scroll back
+
+    
 });
 
 // Delete task
