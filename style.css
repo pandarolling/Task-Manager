@@ -141,6 +141,7 @@ button:hover {
     min-height: 175px;
     margin: 15px;
     border-radius: 5px;
+    font-family: monospace;
     transition: box-shadow 0.3s ease;
 }
 
