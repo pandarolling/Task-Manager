@@ -5,6 +5,7 @@ const confirmElement = document.querySelector('.confirm');
 const confirmBtn = document.querySelector('.confirmed');
 const cancelBtn = document.querySelector('.cancel');
 
+
 document.getElementById('taskForm').addEventListener('submit', handleFormSubmit);
 
 renderTasks();
@@ -63,6 +64,7 @@ function renderTasks(){
             renderTasks();
         });
 
+
         // Delete button
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('button-box');
@@ -83,7 +85,32 @@ function renderTasks(){
         taskCard.appendChild(deleteButton);
         taskContainer.appendChild(taskCard);
     });
+    updateProgressBar();
+
 }
+
+function updateProgressBar() {
+           const total = tasks.length;
+           const completed = tasks.filter(task => task.completed).length;
+           const completionRate = total === 0 ? 0 : (completed / total) * 100;
+         
+           // Update bar width
+           const progressBar = document.getElementById('progress-bar');
+           progressBar.style.setProperty('--progress', `${completionRate}%`);
+           progressBar.style.position = "relative";
+
+           // Directly adjust width of inner div
+           progressBar.querySelector('div')?.remove(); // remove previous filler
+           const filler = document.createElement('div');
+           filler.style.height = "100%";
+           filler.style.width = `${completionRate}%`;
+           filler.style.background = "linear-gradient(90deg, #4caf50, #8bc34a)";
+           filler.style.transition = "width 0.4s ease";
+           progressBar.appendChild(filler);
+
+           // Update text
+           document.getElementById('progressText').innerText = `${Math.round(completionRate)}% completed`;
+         }
 
 // Confirm delete
 confirmBtn.addEventListener('click', ()=> {

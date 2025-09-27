@@ -17,8 +17,46 @@ body {
     margin: 20px auto;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* soft shadow */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); 
 }
+
+/* Progress Bar Container */
+#progress {
+  margin: 20px auto;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Progress bar background */
+#progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* Actual progress (filling) */
+#progress-bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4caf50, #8bc34a);
+  transition: width 0.4s ease;
+}
+
+/* Progress text */
+#progressText {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+
 
 /* Main heading */
 h1 {
@@ -175,7 +213,8 @@ button:hover {
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    width: 100vw; 
+    height: 100vh;
     background: rgba(0, 0, 0, 0.9);
 }
 
