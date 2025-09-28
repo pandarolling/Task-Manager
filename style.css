@@ -203,6 +203,19 @@ button:hover {
     margin: 10px;
     
   }
+  #scrollUp, #scrollDown {
+    padding: 15px 21px;
+}
+#scrollDown{
+    right: 20px;
+    bottom: 420px;
+
+}
+#scrollUp{
+    right: 20px;
+    bottom: 480px;
+
+}
 }
 
 /* state: completed */
