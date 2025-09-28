@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Manager</title>
   <link rel="stylesheet" href="style.css">
+  
 </head>
 
 <body>
@@ -13,13 +14,15 @@
 
         <!--  Header card containing title and task input form -->
         <header class="card" id="taskHeaderCard">
-          <h1>Task Manager</h1>
+          <h1>Task Manager </h1>
 
           <!-- Task input form -->
           <form id="taskForm">
             <input autofocus type="text" id="taskInput" placeholder="Add a task...">
             <button type="submit">Add Task</button>
+            <button id="clrtsks"> Clear all </button>
           </form>
+          
         </header>
         
         <section class = "card" id="progress"> Progress Bar
@@ -27,9 +30,9 @@
             <p id="progressText">0% completed</p>
         </section>
 
-
         <!-- Container to hold the task cards -->
         <section id="taskContainer"></section>
+
     </section>
 
     <!-- Confirmation dialog for deleting a task -->
@@ -39,6 +42,9 @@
         <button class="cancel">Cancel</button>
         <button  class="confirmed" autofocus>Confirm</button>
     </div>
+
+    <div id="scrollUp">&#8593</div>
+    <div id="scrollDown">&#8595 </div>
   <script src="script.js"></script>
 </body>
 

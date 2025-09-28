@@ -4,11 +4,19 @@ const taskManagerContainer = document.querySelector('.taskManager');
 const confirmElement = document.querySelector('.confirm');
 const confirmBtn = document.querySelector('.confirmed');
 const cancelBtn = document.querySelector('.cancel');
-
+const clrAllbtn = document.getElementById('clrtsks');
+const scrlUp = document.getElementById('scrollUp');
+const scrlDwn = document.getElementById('scrollDown');
 
 document.getElementById('taskForm').addEventListener('submit', handleFormSubmit);
 
 renderTasks();
+
+// Clear all tasks
+clrAllbtn.addEventListener('click', ()=> {
+    clearAllTasks();
+});
+
 
 // Handle form submit
 function handleFormSubmit(event) {
@@ -136,9 +144,23 @@ cancelBtn.addEventListener('click', ()=> {
     
 });
 
+scrlUp.addEventListener('click', ()=> {
+    taskManagerContainer.scrollIntoView({ behavior:"smooth" , block: "start" });
+});
+scrlDwn.addEventListener('click', ()=> {
+    taskManagerContainer.scrollIntoView({ behavior:"smooth" , block: "end" });
+
+});
+
 // Delete task
 function deleteTask(index){
     tasks.splice(index,1);
+    saveTasks();
+    renderTasks();
+}
+
+function clearAllTasks() {
+    tasks.splice(0, tasks.length); // Clear the array
     saveTasks();
     renderTasks();
 }
