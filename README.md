@@ -20,12 +20,12 @@ To run this project locally, follow these simple steps:
 1. **Clone the repository:**
 ```bash
    git clone [https://github.com/pandarolling/Task-Manager.git](https://github.com/pandarolling/Task-Manager.git)
-Navigate into the project directory:
+2. **Navigate into the project directory:**
 
-Bash
+```bash
    cd Task-Manager
-Open the application:
+3. **Open the application:**
 Simply double-click the index.html file to open it in your favorite web browser—no local server setup required!
 
-📄 License
+**📄 License**
 This project is open-source and available under the MIT License.
